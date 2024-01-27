@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Website using Bootstrap</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha384-GLhlTQ8iS6+uq6Z/hRTtJS3PVoq1RGIZMEObqNJW9Qp1P1Q7r1p" crossorigin="anonymous">
+
+
+  <style>
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    .blur-background {
+      filter: blur(5px);
+      /* Adjust the blur intensity as needed */
+      transition: filter 1.0s ease-in-out;
+    }
+
+    .modal.show+.blur-background {
+      filter: blur(5px);
+      /* You can use a different blur intensity for the modal */
+      transition: filter 0.3s ease-in-out;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" id="modalHeading">Modal Heading</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body" id="modalBody">
+          <!-- Content will be dynamically inserted here -->
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+<div id="allSections">
+  <header id="home">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 border-bottom fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand fs-2" href="#">Techno-<span class="text-primary">Web</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5 text-center">
+            <li class="nav-item">
+              <a class="nav-link active text-primary" aria-current="page" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Services
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#Services">SEO</a></li>
+                <li><a class="dropdown-item" href="#Services">Web Design</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#Services">Graphics Design</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Team">Our Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Contact">Contact</a>
+            </li>
+        </div>
+      </div>
+    </nav>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="b5img/webDev.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption  d-md-block">
+            <h5>Web Development</h5>
+            <p>Transforming ideas into interactive reality, the language of the web developer speaks in code.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="b5img/appDev.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption  d-md-block">
+            <h5>App Development</h5>
+            <p>Turning code into seamless experiences, app development is innovation in your pocket.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="b5img/graphicsDsn.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption  d-md-block">
+            <h5>Graphics Design</h5>
+            <p>Where creativity becomes a visual language, graphics design is the storyteller.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </header>
+  <section class="about my-5 " id="about">
+    <div class="container">
+      <div class="text-center my-5">
+        <h1 data-aos="fade-up" data-aos-offset="200">About <span class="text-primary">me</span></h1>
+        <hr class="w-25 m-auto">
+      </div>
+      <div class="row">
+        <div class="col-sm-1 col-md-6 col-lg-6 col-12" data-aos="zoom-in" data-aos-offset="200">
+          <h1>What do you <span class="text-primary">want to know ?</span> </h1>
+          <p class="p-1">
+            At Techno-Web, we want to provide you with valuable insights into the world of technology and web development. Whether you're eager to explore the latest trends, enhance your coding skills, discover innovative web design techniques, or get to know our experienced team of teachers, we've got you covered. Your journey into the realms of web knowledge and expertise starts here at Techno-Web!
+          </p>
+          <button type="button" class="btn btn-light mb-5">More About Me</button>
+
+
+          <div class="accordion" id="accordionExample " data-aos="fade-left" data-aos-offset="200">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  My Hobbies
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>A hobby is an activity that you enjoy doing in your spare time. </strong>My hobbies are
+                  listening music, watching movie, singing music, photography, and tennis..
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button " data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  My Qualification
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>Master Of Computer Application</strong>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  My Dreams
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>My dream life is to keep learning and evolving for ever. My dream life is to have a healthy
+                    body that lets me experience life. </strong> dream life is to have mentors who support me, advice me
+                  and help me move forward. My dream life is to be brave enough to be vulnerable.
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-sm-1 col-md-6 col-lg-6 col-12 m-auto text-end" data-aos="fade-up-right" data-aos-offset="200">
+          <img src="b5img/s4.jpg">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="Services py-5 bg-light" id="Services">
+    <div class="container">
+      <div class="text-center my-5">
+        <h1>Our <span class="text-primary">Services</span></h1>
+        <hr class="w-25 m-auto">
+      </div>
+      <div class="row mt-5" data-aos="zoom-in-up" data-aos-offset="200">
+        <div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <div class="card">
+            <div class="card-body">
+              <i class="fa fa-address-book bg-primary card-text" style='font-size:24px'></i>
+              <h5 id="webTitle" class="card-title">Web Development!</h5>
+              <p id="webDevContent" class="card-text">Web development refers to the creating, building, and maintaining
+                of websites. It includes aspects such as web design,web programming, and database management.</p>
+              <a onclick="openModal(document.getElementById('webTitle').innerText, document.getElementById('webDevContent').innerText)"
+                class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <div class="card">
+            <div class="card-body">
+              <i class="fa fa-address-book bg-primary card-text" style='font-size:24px'></i>
+              <h5 id="appTitle" class="card-title">App Development!</h5>
+              <p id="appDevContent" class="card-text">app development is the process of creating software applications
+                specifically designed to run on mobile devices such as smartphones and tablets.
+              </p>
+              <a onclick="openModal(document.getElementById('appTitle').innerText, document.getElementById('appDevContent').innerText)"
+                class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <div class="card">
+            <div class="card-body">
+              <i class="fa fa-address-book bg-primary card-text" style='font-size:24px'></i>
+              <h5 id="gpsTitle" class="card-title">Graphics Design!</h5>
+              <p id="graphicsDevContent" class="card-text">Graphic design is a form of communication that uses colours,
+                shapes, images, and words to create visual content that surrounds us in many forms.</p>
+              <a onclick="openModal(document.getElementById('gpsTitle').innerText, document.getElementById('graphicsDevContent').innerText)"
+                class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+      <div class="row mt-5" data-aos="zoom-in-down" data-aos-offset="200">
+
+        <div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <div class="card">
+            <div class="card-body">
+              <i class="fa fa-address-book bg-primary card-text" style='font-size:24px'></i>
+              <h5 id="webTitle" class="card-title">Web Development!</h5>
+              <p id="webDevContent" class="card-text">Web development refers to the creating, building, and maintaining
+                of websites. It includes aspects such as web design,web programming, and database management.</p>
+              <a onclick="openModal(document.getElementById('webTitle').innerText, document.getElementById('webDevContent').innerText)"
+                class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <div class="card">
+            <div class="card-body">
+              <i class="fa fa-address-book bg-primary card-text" style='font-size:24px'></i>
+              <h5 id="appTitle" class="card-title">App Development!</h5>
+              <p id="appDevContent" class="card-text">app development is the process of creating software applications
+                specifically designed to run on mobile devices such as smartphones and tablets.
+              </p>
+              <a onclick="openModal(document.getElementById('appTitle').innerText, document.getElementById('appDevContent').innerText)"
+                class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <div class="card">
+            <div class="card-body">
+              <i class="fa fa-address-book bg-primary card-text" style='font-size:24px'></i>
+              <h5 id="gpsTitle" class="card-title">Graphics Design!</h5>
+              <p id="graphicsDevContent" class="card-text">Graphic design is a form of communication that uses colours,
+                shapes, images, and words to create visual content that surrounds us in many forms.</p>
+              <a onclick="openModal(document.getElementById('gpsTitle').innerText, document.getElementById('graphicsDevContent').innerText)"
+                class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <section class="Team my-5 text-center" id="Team">
+    <div class="container">
+      <div class="text-center my-5">
+        <h1>Our <span class="text-primary">Team</span></h1>
+        <hr class="w-25 m-auto">
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <div class="card" data-aos="zoom-in-up" data-offset="200">
+            <div class="card-body">
+              <img src="b5img/s4.jpg " class="img-fluid rounded-circle border border-primary p-2">
+              <h5 class="card-title mt-4">karen</h5>
+              <p class="card-text">Back-end Developer</Back-end></p>
+              <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <div class="card" data-aos="zoom-in-left" data-offset="200">
+            <div class="card-body">
+              <img src="b5img/s6.jpg " class="img-fluid rounded-circle border border-primary p-2">
+              <h5 class="card-title mt-4">Andrew</h5>
+              <p class="card-text">Front-end Developer</p>
+              <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <div class="card" data-aos="zoom-in-down" data-offset="200">
+            <div class="card-body">
+              <img src="b5img/s3.jpg " class="img-fluid rounded-circle border border-primary p-2">
+              <h5 class="card-title mt-4">Kristina</h5>
+              <p class="card-text">Front-end Developer</p>
+              <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <section class="Contact py-5" id="Contact">
+    <div class="container">
+      <div class="text-center my-5">
+        <h1>Feel free <span class="text-primary"> to Connect</span></h1>
+        <hr class="w-25 m-auto">
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-12" data-aos="fade-up-left" data-offset="200">
+          <form class="row g-3">
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Password</label>
+              <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="col-md-6">
+              <label for="inputCity" class="form-label">City</label>
+              <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="col-md-4">
+              <label for="inputState" class="form-label">State</label>
+              <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="inputZip">
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-12 m-auto text-end p-4" data-aos="fade-up-right" data-offset="200">
+          <img src="b5img/s2.jpg " class="img-fluid img-thumbnail -2">
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container-fluid bg-primary text-white p-2 text-center fs-4">For Learning Purpose</div>
+  <div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script>
+    function openModal(heading, content) {
+      // Set the dynamic content
+      document.getElementById('modalHeading').innerText = heading;
+      document.getElementById('modalBody').innerHTML = content;
+
+      // Open the modal
+      var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+      myModal.show();
+    }
+
+    // Reset the blur on modal close
+    var myModalEl = document.getElementById('myModal');
+    myModalEl.addEventListener('hidden.bs.modal', function () {
+      document.body.classList.remove('modal-open');
+      document.getElementById("allSections").classList.remove('blur-background');
+      document.querySelector('.blur-background').classList.remove('show');
+    });
+
+    // Apply blur on modal show
+    myModalEl.addEventListener('show.bs.modal', function () {
+      document.body.classList.add('modal-open');
+      document.getElementById("allSections").classList.add('blur-background');
+      document.querySelector('.blur-background').classList.add('show');
+    });
+  </script>
+</body>
+
+</html>
