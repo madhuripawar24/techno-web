@@ -23,10 +23,10 @@ h1 {
 /* mobile-styles.css (for mobile screens) */
 @media (max-width: 768px) {
     .carousel-item img {
-        height: 30vh;
+        height: 32vh;
     }
     .resp-carousel {
-        height: 30vh;
+        height: 32vh;
     }
 }
 
@@ -43,4 +43,18 @@ footer {
     color: white;
   }
   
-  
+  .justify-text {
+    text-align: justify;
+  }
+
+  .center-align {
+    text-align: center;
+  }
+
+  .padding-l-32 {
+    padding-left: 32;
+  }
+
+  .padding-r-32 {
+    padding-right: 32;
+  }
